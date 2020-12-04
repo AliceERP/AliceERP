@@ -1,0 +1,43 @@
+.text2{
+    position: absolute;
+    z-index: 999;
+    // margin: 0 auto;
+    // left: 0;
+    // right: 0;        
+}
+
+.text {
+    &-center {text-align: center;}
+    &-left {text-align: left;}
+    &-right {text-align: right;}
+    &-decoration {
+        &-none {text-decoration: none;}
+	}
+	&-red {color: red;}
+}
+// .test {
+//     vertical-align: baseline;
+// }
+.t__ {
+	&layout {
+		display: grid;
+		grid-template-columns: 30% auto;
+		grid-template-areas: "photo product";
+	}
+	&product {
+		grid-area: product;
+	}
+
+}
+.t__mainPhoto {
+	width: 100%;
+	height: 40rem;
+	display: inline-block;
+	border: 2px solid #ccc;
+	padding: 0.3rem 0 0.3rem 0;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+
+}
+.test{position: relative; margin-top:-40px;}

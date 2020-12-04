@@ -1,0 +1,62 @@
+.img {
+    max-width: 100%;
+    &-w-1{width: 10rem;}
+    &__logo {
+        width: 10rem;
+
+        @include downtabletwide {
+            width: 8rem;
+            padding-top: 0.55rem;
+        }
+        @include downphone {
+            width: 4.5rem;
+            padding-top: 0.42rem;
+        }
+    }
+    &__phone {
+        @include downphone {
+            width: calc(50rem * 1);
+            height: calc(30rem * 1);
+        }
+
+    }
+    &-bg {
+        background-image: url("/img/site/Resi Invest Footer Icon theme light.png");
+        background-repeat: no-repeat;
+        // float: right;
+        // clear: right;
+    }
+}
+.imageClass{
+	position: absolute;
+	max-width:100%;
+	max-height:100%;
+	margin: auto auto;
+	top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+.icon {
+    &-lock {
+        background: green;
+        border-radius: 3px;
+        width: 27.2px;
+        height: 20px;
+        // margin-top: 60px;
+        // margin-left: 60px;
+        position: relative;
+        &:before{
+            content: "";
+            display: block;
+            position: absolute;
+            border: 3px solid green;
+            top: -14px;
+            left: 2.3px;
+            width: 15px;
+            height: 27px;
+            border-radius: 35px 35px 0 0;
+        }
+    }
+}

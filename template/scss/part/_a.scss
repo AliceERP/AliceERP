@@ -1,0 +1,79 @@
+.auto {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+.align {
+    &-center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        // width: 50%;
+        // height: 50%;
+    }
+    &-left {text-align: left;}
+    &-left2 {text-align: center;}
+    &-top {vertical-align: top;}
+}
+
+.arrow {
+	&-right {
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	&-left {
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+
+.a {
+    &-blink {
+        animation:blinkingText-red 1.2s;
+        animation-iteration-count: 3;
+    }
+    &-load {
+        border: 4px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 4px solid #3498db;
+        width: 30px;
+        height: 30px;
+        -webkit-animation: spin 1s linear infinite; /* Safari */
+        animation: spin 1s linear infinite;
+        &-small {
+            width: 17px;
+            height: 17px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #3498db;
+        }
+    }
+}
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+@keyframes blinkingText{
+    0%{     color: #000;    }
+    49%{    color: #000; }
+    60%{    color: transparent; }
+    99%{    color:transparent;  }
+    100%{   color: #000;    }
+}
+@keyframes blinkingText-red{
+    0%{     color: red;    }
+    49%{    color: red; }
+    60%{    color: transparent; }
+    99%{    color:transparent;  }
+    100%{   color: red;    }
+}

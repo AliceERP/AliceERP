@@ -1,0 +1,76 @@
+.h {
+    &-0-1 {height: 0.1rem;}
+    &-0-2 {height: 0.2rem;}
+    &-0-3 {height: 0.3rem;}
+    &-0-4 {height: 0.4rem;}
+    &-0-5 {height: 0.5rem;}
+    &-0-6 {height: 0.6rem;}
+    &-0-7 {height: 0.7rem;}
+    &-0-8 {height: 0.8rem;}
+    &-0-9 {height: 0.9rem;}
+    &-1 {height: 1rem;}
+    &-1-1 {height: 1.1rem;}
+    &-1-2 {height: 1.2rem;}
+    &-1-3 {height: 1.3rem;}
+    &-1-4 {height: 1.4rem;}
+    &-1-5 {height: 1.5rem;}
+    &-1-6 {height: 1.6rem;}
+    &-1-7 {height: 1.7rem;}
+    &-1-8 {height: 1.8rem;}
+    &-1-9 {height: 1.9rem;}
+    &-2 {height: 2rem;}
+    &-3 {height: 3rem;}
+    &-4 {height: 4rem;}
+    &-5 {height: 5rem;}
+    &-5-4 {height: 5.4rem;@include downtabletwide{height:7rem;}@include downphone{height:10rem;}}
+    &-5-5 {height: 5.5rem;}
+    &-6 {height: 6rem;}
+    &-7 {height: 7rem;}
+    &-8 {height: 8rem;@include downphone{height:18rem;}}
+    &-9 {height: 9rem;}
+    &-10 {height: 10rem;}
+    &-11 {height: 11rem;}
+    &-12 {height: 12rem;@include downphone {height:25rem;}}
+    &-13 {height: 13rem;@include downphone{height:23rem;}}
+    &-14 {height: 14rem;}
+    &-15 {height: 15rem;}
+    &-16 {height: 16rem;}
+    &-17 {height: 17rem;}
+    &-18 {height: 18rem;}
+    &-19 {height: 19rem;}
+    &-20 {height: 20rem;}
+    &-21 {height: 21rem;}
+    &-22 {height: 22rem;}
+    &-23 {height: 23rem;}
+    &-24 {height: 24rem;}
+    &-25 {height: 25rem;}
+    &-26 {height: 26rem;}
+    &-27 {height: 27rem;}
+    &-28 {height: 28rem;}
+    &-29 {height: 29rem;}
+    &-30 {height: 30rem;}
+    &-31 {height: 31rem;}
+    &-32 {height: 32rem;}
+    &-33 {height: 33rem;}
+    &-34 {height: 34rem;}
+    &-35 {height: 35rem;}
+    &-36 {height: 36rem;}
+    &-37 {height: 37rem;}
+    &-38 {height: 38rem;}
+    &-39 {height: 39rem;}
+    &-40 {height: 40rem;@include downdesktop{height:44rem;}@include downlaptop{height:48rem;}@include downtabletwide{height:55rem;}}
+}
+.hover {
+    &-underline:hover {text-decoration: underline;
+        &-no:hover {text-decoration: none;}}
+}
+.hide {display: none;}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}

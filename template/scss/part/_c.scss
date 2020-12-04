@@ -1,0 +1,107 @@
+.c { // container
+    &-nav{
+        &-top{
+            @include downlaptop {padding-right: 3rem;}
+            @include downtabletwide {padding-right: 1rem;}
+            @include downphone {padding-right: 0rem;}
+        }
+    }
+    &-theme {
+        &-dark {color: $color-theme-dark}
+    }
+    &-left {float: left;}
+    &-right {float:right;}
+    &-float-clear {clear: both;} // clear float
+    &-page {
+        width: 210mm;
+        min-height: 297mm;
+        // padding: 20mm;
+        // margin: 10mm auto;
+        // border: 1px #D3D3D3 solid;
+        // border-radius: 5px;
+        // background: white;
+        // box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.con {
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    &-w-50 {max-width: 50rem;}
+    &-w-60 {max-width: 60rem;}
+    &-w-70 {max-width: 70rem;}
+    &-w-80 {max-width: 80rem;}
+    &-w-90 {max-width: 90rem;}
+    &-w-100 {max-width: 110rem;}
+    &-page {
+        max-width: 110.25rem;
+        margin: 0 auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    &-page2 {
+        display: flex;
+        position: relative;
+        // justify-content: center;
+    }
+    &__header-one {
+        max-width: 67.5rem;
+        padding-top: 0.5rem;
+        margin: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        // display: flex;
+    }
+}
+.cursor {cursor: pointer;}
+
+.color {
+    &__background-black {
+        background: #343434;
+    }
+    &__font-white--gray {
+        color: #D3D3D3;
+    }
+    &__background-theme {
+        &--lighter {
+            background: $color-theme-lighter;
+            color: white;
+        }
+    }
+    &-theme {
+        color: $color-theme;
+    }
+}
+.cell {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    flex: 1 1 auto; 
+
+    padding: 10px;
+    margin: 10px;
+
+    // background-color: green;
+    // border: 1px solid red;
+    // text-align: center;
+}
+.containertest {
+    position: relative;
+    margin:auto;
+}
+ /* The Close Button */
+ .close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+  }

@@ -1,0 +1,73 @@
+$a-color-bg-dashboard: #1b2431;
+$a-color-theme: #313D4F;
+$a-color-theme-light: #738297;
+$a-color-text-gray: #818181;
+$a-speed-hover: 0.2s;
+.a {
+    &-bg {
+        &-dashboard {background-color: $a-color-bg-dashboard;}
+        &-c {background-color: $a-color-theme;}
+    }
+    &-main {
+        height: 100%;
+        margin: 0;
+        margin-left: 160px; /* Same as the width of the sidenav */
+        // font-size: 28px; /* Increased text to enable scrolling */
+        padding: 0px 10px;
+        color: white;
+    
+      }
+    &-nav {
+        &-sidebar {
+            height: 100%;
+            width: 160px;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            background-color: #313D4F;
+            overflow-x: hidden;
+            a {
+                padding: 6px 8px 6px 16px;
+                text-decoration: none;
+                color: $a-color-text-gray;
+                display: block;
+                transition: $a-speed-hover;
+                &:hover {
+                    color: #f1f1f1;
+                }
+            }
+            &-sticky {
+                position: -webkit-sticky;
+                position: sticky;
+                top: 0px; /* Height of navbar */
+                overflow-x: hidden;
+                overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+            }
+        }
+
+    }
+    &-btn {
+        cursor:pointer;
+        transition: $a-speed-hover;
+        &:hover{
+            background-color: $a-color-theme;
+            color: white;
+        }
+    }
+    &-f {
+        &t {
+            font-size: 0.7;
+        }
+    }
+    &-border {border: 1px solid #738297;}
+}
+.a-nav-sidebar-currentpage {color:white !important;background-color:$a-color-bg-dashboard;border-left:5px solid $a-color-theme-light;}
+
+
+.mod {
+    &-underline-no{text-decoration: none;}
+}
+
+
+
+  

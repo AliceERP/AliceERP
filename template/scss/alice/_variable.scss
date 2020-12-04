@@ -1,0 +1,61 @@
+$color-theme: #0e88be;
+$color-theme-lighter: rgb(0, 176, 202);
+$color-theme-dark: rgb(0, 80, 92);
+$color-theme-gray: #dcddde;
+$color-theme-orange: #ff8202;
+// Menu Top Nav
+// $nav-background-color: #fafafa;
+// $nav-menu-divider-color: #c8c8c8;
+// $nav-menu-divider: #c8c8c8;
+// $nav-menu-hover: #012169; // Aussie blue color
+// $nav-border-bottom: 1px solid #f2f2f2;
+// $nav-padding: .5rem 1rem; // top nav padding, top/bottom 8px and left/right 20px
+// $nav-top-height: 2.05rem;
+// $nav-top-font-size: 1rem;
+// $nav-top-background-color: #8a0b0b;
+// $nav-font-size: .8rem;
+// $nav-font-spacing: .08rem;
+// $nav-font-color: #606060;
+
+// Sizes
+$scale: 100;
+$size-font-h1: calc(0.8rem + 1.2rem);
+$size-font-h2: calc(0.7rem + 1.1rem);
+$size-font-h3: calc(0.6rem + 1.0rem);
+$size-font-h4: calc(0.5rem + .99rem);
+$size-font-h5: calc(0.4rem + .97rem);
+$size-font-h6: calc(0.38rem + .95rem);
+$size-font-p: calc(0.5rem + 0.9rem);
+$size-font-p-d: calc(1.2rem);
+$size-font-p-smaller: calc(0.35rem + 0.7rem);
+
+// Color
+// Theme dynamic settings
+$heading-black: #444;
+$color-first: #8a0b0b;
+$color-second: #c00;
+$color-third: black;
+$color-first-opposite: white;
+$color-white-blue: #fcfcfc;
+
+// Spacing
+$block-gap: .5rem;
+$paragraph-gap: .3rem;
+$page-side-margin: 1rem;
+$page-top-margin: .4rem;
+
+// Aussie red #E4002B
+
+// Background
+// $background-focus-no: #f2f2f2;
+$background-focus-no: rgb(241, 241, 241);
+
+
+
+// Notes:
+// Use REMs for sizes and spacing. Use EMs for media queries.
+
+
+
+
+// em sizing https://engageinteractive.co.uk/blog/em-vs-rem-vs-px > never create a min-width and max-width overlap in the same block > rem size > em @media > px NO dont use

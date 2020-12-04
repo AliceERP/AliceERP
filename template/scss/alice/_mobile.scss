@@ -1,0 +1,32 @@
+@mixin downphone { // 599px 16px = 1em at body { font-size: 62.5%}
+    @media (max-width: 37.4em) { @content; }
+}
+@mixin downtabletwide { // 899px
+    @media (max-width: 56.2em) { @content; }
+}
+@mixin downlaptop { // 1199px
+    @media (max-width: 74.9em) { @content; }
+}
+@mixin downdesktop { // 1799px 
+    @media (max-width: 112.4em) { @content; }
+}
+@mixin downsuper { // 2099px 
+    @media (max-width: 131.25em) { @content; }
+}
+
+
+@mixin uptablettall { // 600
+    @media (min-width: 37.5em) { @content; }
+}
+@mixin uptabletwide { // 900
+    @media (min-width: 56.3em) { @content; }
+}
+@mixin uplaptop { // 1200 
+    @media (min-width: 75em) { @content; }
+}
+@mixin updesktop { // 1800px 
+    @media (min-width: 112.5em) { @content; }
+}
+@mixin upsuper { // 2100px 
+    @media (min-width: 131.19em) { @content; }
+}
