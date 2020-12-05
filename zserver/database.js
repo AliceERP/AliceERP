@@ -1,4 +1,6 @@
 'use strict'
+global.__zserverDir = __dirname // global variable for this database folder location /zserver
+global.__databaseFile = __filename // global variable for this database file /zserver/database.js
 const MongoClient = require('mongodb').MongoClient  // import mongodb driver, which is MongoClient
 const ObjectID = require('mongodb').ObjectID    // the ObjectID from mongodb to use the ID field in mongodb
 const dbname = process.env.DATABASE_NAME || 'testdb'

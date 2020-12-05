@@ -11,13 +11,15 @@ app.disable('x-powered-by') // remove this string in browser inspect mode
 const path = require('path')
 const flash = require('connect-flash')
 const session = require('express-session')
-const uuid = require('uuid/v4') // random unique string generator for userID session
+// const uuid = require('uuid/v4') // random unique string generator for userID session
+const { v4: uuidv4 } = require('uuid') // random unique string generator for userID session usage: uuidv4()
 const https = require('https')
 const fs = require('fs')
 const db = require('@zserver/database') // set this in package.json _moduleAliases
 const bodyParser = require('body-parser')
 app.use(bodyParser.json())
 app.use(express.static('public')) 
+const bcrypt = require('bcryptjs')
 const exphbs = require('express-handlebars')
 const xmlj = require('fast-xml-parser').parse // convert xml to json: xmlj(data)
 const nodemailer = require('nodemailer') // sending emails
@@ -97,7 +99,7 @@ app.use(session({
     , saveUninitialized: true // https://www.npmjs.com/package/express-session#saveuninitialized
     , httpOnly: true // make the cookie unavailable for javascript by providing the option httpOnly : true
     , genid: (req) => {
-        return uuid()
+        return uuidv4()
       }   
 }))
 
@@ -110,7 +112,7 @@ app.use((req, res, next) => { // color code the message type
     next()
 })
 
-app.use('/', require(path.join('../site/homepage/homepage'))) // make route use the route file in app/home
+app.use('/', require(path.join('../homepage/homepage'))) // make route use the route file in app/home
 
 app.use((err, req, res, next) => { // custom middleware for next function
     res.status(err.status).json({ // send error status to User in json 
@@ -133,7 +135,7 @@ if(mode == 'development') {
                 .listen(PORT, function() {
                     console.log(`No database connection, but Server running https://localhost:${PORT}`)
             })
-        } else {
+        } else { // localhost run on https
             https.createServer(httpsOptions, app)
                 .listen(PORT, function() {
                     console.log(`Database connected. Server running https://localhost:${PORT}`)
@@ -148,8 +150,7 @@ if(mode == 'development') {
             app.listen(PORT, () => {
                 console.log(`No database connection, server running app listening on port ${PORT}`)
             })
-        }
-        else {
+        } else { // server connected to db success
             app.listen(PORT, () => {
                 console.log(`Database connected. Server running app listening on port ${PORT}`)
             })
