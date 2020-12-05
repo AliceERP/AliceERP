@@ -11,9 +11,7 @@ const {pAdminSuper} = require('@part/auth')
 
 router.get('/', pAdminSuper, aliceAsyncMiddleware(async(req, res) => {
     res.render(path.join(__dirname, `${__appName}`), {
-        title: 'ERP system that makes ERP System | Alice ERP'
+        title: 'Settings | Alice ERP'
         , layout: 'aliceerp'
     })
 }))
-
-router.use('/setting', require('./setting/setting'))

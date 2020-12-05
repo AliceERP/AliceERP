@@ -21,6 +21,7 @@ router.get('/', aliceAsyncMiddleware(async(req, res) => {
     })
 }))
 
+router.use('/alice/dashboard', require('../alice/dashboard/dashboard'))
 router.use('/login', require('../alice/login/login'))
 router.use('/logout', require('../alice/logout/logout'))
 

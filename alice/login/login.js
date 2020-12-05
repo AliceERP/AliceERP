@@ -4,10 +4,10 @@ const router = express.Router()
 const path = require('path')
 const __appName = path.dirname(__filename).split(path.sep).pop()
 module.exports = router
+const db = require('@zserver/database') // access database
 
 const {aliceAsyncMiddleware} = require('@part/alice')
 const {dbFindOneQuery, dbFindOneDelete, dbFindOneUpdate} = require('@part/db')
-const db = require('@zserver/database') // access database
 
 const bcrypt = require('bcryptjs')
 const Joi = require('joi') // access checks
