@@ -31,4 +31,24 @@ module.exports = {
         .catch(error => console.log(error))
         return existData // return the data back to the function that called this function
     } // const existDbDataDelete = dbFindOneDelete('app', {_id : db.getPrimaryKey(formId)})    
+    , dbFindAllArray: (collection, query) => { // find 1 data: query=search data; field
+        const existData = db.getDB().collection(collection).find(query).toArray() // find first result only
+        .then(existData => {
+            // console.log(existData)
+            // const fieldData =  existData[field] // make variable = data of the field
+            return existData // return this data to existData as it's a promise
+        })
+        .catch(error => console.log(error))
+        return existData // return the data back to the function that called this function
+    } // eg const existRouteHome = await dbFindAllArray('app', '')
+    // eg const existRouteHome = await dbFindAllArray('app', {field: value})
+    , dbFindOneDelete: (collection, query) => { // find 1 data and delete
+        const existData = db.getDB().collection(collection).findOneAndDelete(query) // find first result only
+        .then(existData => {
+            // const fieldData =  existData[field] // make variable = data of the field
+            return existData // return this data to existData as it's a promise
+        })
+        .catch(error => console.log(error))
+        return existData // return the data back to the function that called this function
+    } // const existDbDataDelete = await dbFindOneDelete('app', {_id : db.getPrimaryKey(formId)})    
 }
