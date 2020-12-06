@@ -7,11 +7,13 @@ module.exports = router
 const db = require('@zserver/database') // access database
 
 const bcrypt = require('bcryptjs')
+const fs = require('fs-extra')
 
 const {aliceAsyncMiddleware} = require('@part/alice')
 const {pAdminSuper} = require('@part/auth')
 const {dbFindOneQuery, dbFindOneUpdate, dbFindAllArray, dbFindOneDelete} = require('@part/db')
 const {div, divClass} = require('@part/erp')
+const {getFunctionName} = require('@part/get')
 
 router.post('/add', pAdminSuper, aliceAsyncMiddleware(async(req, res) => {
     console.log('add')
@@ -31,10 +33,15 @@ router.post('/add', pAdminSuper, aliceAsyncMiddleware(async(req, res) => {
 }))
 
 router.get('/', pAdminSuper, aliceAsyncMiddleware(async(req, res) => {
-
+    console.log('homepageview')
+    const fileErp = await fs.readFile('./part/erp.js', 'utf8')
+    // console.log('fileErp',fileErp)
+    const functionName = getFunctionName(fileErp)
+    // console.log('functionName',functionName)
     res.render(path.join(__dirname, `${__appName}`), {
         title: 'ERP Create | Alice ERP'
         , layout: 'aliceerp'
+        , functionName
     })
 }))
 

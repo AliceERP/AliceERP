@@ -2,7 +2,12 @@
     <div>
         <div class='p-t-1'>Add<br>
             <form action="homepageview/add" method="post">
-                ERP Function Name: <input type="text" name="erpName" placeholder="Enter text here"><br>
+                ERP Function Name: <input type="text" name="erpName" placeholder="Enter text here" list='functionNameList'><br>
+                <datalist id='functionNameList'>
+                    {{#each functionName}}
+                    <option value='{{this}}'>{{this}}</option>
+                    {{/each}}
+                </datalist>
                 Text: <input type="text" name="text" placeholder="Enter text here"><br>
                 Class Name: <input type="text" name="nameClass" placeholder="Enter class here"><br>
                 <button type="submit">Add</button>
