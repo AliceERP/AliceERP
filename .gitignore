@@ -1,6 +1,7 @@
 node_modules
 .env
 note.txt
-public/*
+public/css/*
+public/font/*
 site/*
 private/*
