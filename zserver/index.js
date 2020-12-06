@@ -112,7 +112,24 @@ app.use((req, res, next) => { // color code the message type
     next()
 })
 
-app.use('/', require(path.join('../homepage/homepage'))) // make route use the route file in app/home
+app.use('/', require(path.join('../site/site'))) // make route use the route file in app/home
+app.use('/alice/dashboard', require(path.join('../alice/dashboard/dashboard')))
+app.use('/login', require(path.join('../alice/login/login')))
+app.use('/logout', require(path.join('../alice/logout/logout')))
+// const {aliceAsyncMiddleware} = require('@part/alice')
+// const {dbFindOneUpdate} = require('@part/db')
+// app.get('/init', aliceAsyncMiddleware(async(req, res) => {
+//     console.log('init')
+//     const password = process.env.ADMIN_PASSWORD
+//     const username = process.env.ADMIN_USERNAME
+//     const permission = process.env.ADMIN_PERMISSION
+//     const hashedPassword = await bcrypt.hash(password, 10) // saltRounds = 10
+//     await dbFindOneUpdate('user', {username: username}, {password: hashedPassword, permission: permission})  
+//     req.flash('success_msg', 'Your Admin account successfully created, thank you. Please click on login') // store msg in session and show it after redirect
+//     console.log('initFinish')
+//     res.redirect('/')
+// }))
+
 
 app.use((err, req, res, next) => { // custom middleware for next function
     res.status(err.status).json({ // send error status to User in json 

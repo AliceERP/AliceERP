@@ -19,3 +19,5 @@ router.get('/', pAdminSuper, aliceAsyncMiddleware(async(req, res) => {
         , layout: 'aliceerp'
     })
 }))
+
+router.use('/homepageview', require('./homepageview/homepageview'))

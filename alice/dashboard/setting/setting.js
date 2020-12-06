@@ -12,20 +12,13 @@ const {aliceAsyncMiddleware} = require('@part/alice')
 const {pAdminSuper} = require('@part/auth')
 const {dbFindOneQuery, dbFindOneUpdate, dbFindAllArray, dbFindOneDelete} = require('@part/db')
 
-router.post('/erpsitename', pAdminSuper, aliceAsyncMiddleware(async(req, res) => {
-    console.log('erpsitename')
-    const {erpSiteFolderName} = req.body
-    console.log('erpSiteFolderName',erpSiteFolderName)
-    await dbFindOneUpdate('setting', {setting: 'erp'}, {erpSiteFolderName: erpSiteFolderName})  
-    req.flash('success_msg', 'Success: ERP Site Folder Name updated.') // store msg in session and show it after redirect
-    res.redirect('back')
-}))
 
 router.post('/superadmindelete/:username', pAdminSuper, aliceAsyncMiddleware(async(req, res) => {
     // console.log('superadmindelete')
     const {username} = req.params
     // console.log('username',username)
-    dbFindOneDelete('user', {username: username}) 
+    await dbFindOneDelete('user', {username: username}) 
+
     req.flash('success_msg', 'Success: Super Admin User deleted.') // store msg in session and show it after redirect
     res.redirect('back')
 }))
