@@ -16,7 +16,8 @@
       "home/home.js",
       "*.test.js",
       "public",
-      "private/*"
+      "private/*",
+      "site/*"
     ]
   },
   "keywords": [],

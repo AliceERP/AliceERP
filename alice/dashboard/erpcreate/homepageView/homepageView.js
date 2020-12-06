@@ -28,6 +28,8 @@ router.post('/add', pAdminSuper, aliceAsyncMiddleware(async(req, res) => {
     console.log('outsiderankOutput',rankOutput)
     console.log('outsid rankFunction',rankFunction)
     // save data
+    // erpPage
+    // rankPage - rank the pages. site = 1, subpage = 2 etc
     // page name
     res.redirect('back')
 }))
