@@ -23,4 +23,18 @@ module.exports = {
         // console.log('functionName',functionName)
         return functionName
     } // const functionName = getFunctionName(fileErp)
+    , getDataToArray: (array, field) => { //
+        var count = []
+        array.forEach(x => {
+            count.push(x[field])
+        })
+        return count
+    } // const skuArray = getDataToArray(ebaySku, 'sku')
+    , getArrayToOneData: (array, field) => { //
+        var count = []
+        array.forEach(x => {
+            count += x[field]
+        })
+        return count
+    } // const skuArray = getDataToArray(ebaySku, 'sku')
 }

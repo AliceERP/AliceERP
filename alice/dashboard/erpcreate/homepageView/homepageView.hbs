@@ -1,20 +1,41 @@
-<div class="a-main f-0-8 p-t-1">
+<div class='a-main f-0-8 p-t-1'>
     <div>
         <div class='p-t-1'>Add<br>
-            <form action="homepageview/add" method="post">
-                ERP Function Name: <input type="text" name="erpName" placeholder="Enter text here" list='functionNameList'><br>
+            <form action='homepageview/add' method='post'>
+                ERP Function Name: <input type='text' name='erpName' placeholder='Enter text here' list='functionNameList'><br>
                 <datalist id='functionNameList'>
                     {{#each functionName}}
                     <option value='{{this}}'>{{this}}</option>
                     {{/each}}
                 </datalist>
-                Text: <input type="text" name="text" placeholder="Enter text here"><br>
-                Class Name: <input type="text" name="nameClass" placeholder="Enter class here"><br>
-                <button type="submit">Add</button>
+                Text: <input type='text' name='text' placeholder='Enter text here'><br>
+                Class Name: <input type='text' name='nameClass' placeholder='Enter class here'><br>
+                Page Name: <input type='text' name='pageName' value='site'>
+                Page Rank: <input type='number' name='pageRank' value='1' class='w-2'>
+                Page End: <input type='text' name='pageEnd' value='front' class='w-2'><br>
+                <button type='submit'>Add</button>
             </form>
         </div>
     </div>
-    <div>
-
+    <div class='p-t-1'>Script<br>
+        {{#each pagePart}}
+            <form action='homepageview/add' method='post'>
+                ERP Function Name: <input type='text' name='erpName' value='{{erpName}}' list='functionNameList'><br>
+                Text: <input type='text' name='text' value='{{text}}'><br>
+                Class Name: <input type='text' name='nameClass' value='{{nameClass}}'><br>
+                Page Name: <input type='text' name='pageName' value='{{pageName}}'>
+                Page Rank: <input type='number' name='pageRank' value='{{pageRank}}' class='w-2'>
+                Page End: <input type='text' name='pageEnd' value='{{pageEnd}}' class='w-2'><br>                
+                Rank Number: <input type='text' name='rankNumber' value='{{rankNumber}}' class='w-5'><br>
+                Id: <input type='text' name='_id' value='{{_id}}' readonly><br>
+                <button type='submit'>Update</button>
+            </form>
+            <br>
+        {{/each}}
+    </div>
+    <div>Output:<br>
+        {{#each pagePart}}
+            {{rankOutput}}<br>
+        {{/each}}
     </div>
 </div>

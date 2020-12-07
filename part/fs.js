@@ -8,4 +8,7 @@ module.exports = {
             fs.mkdirSync(folder)
         }
     } // fsFolderCheckCreate(imageFolderBase) 
+    , fsFileCreate: async (pathFile, data) => { // create file at folder path
+        await fs.writeFile(pathFile, data)  
+    } // fsFileCreate(path.join('app', name, `${name}.hbs`), existView)
 }
